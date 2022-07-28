@@ -7,7 +7,6 @@
 <script>
 import Epub from "epubjs";
 global.ePub = Epub;
-export default {
-
-};
+export default {};
 </script>
+
