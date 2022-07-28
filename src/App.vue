@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <style lang="scss" scoped >
-@import "./assets/styles/global.scss" 
+@import "./assets/styles/global.scss";
 
 .text {
   font-family: "Days one";
