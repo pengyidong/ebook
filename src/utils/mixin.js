@@ -1,7 +1,9 @@
-import { mapGetters, mapActions } from "vuex";
-export const ebookMinx = {
+import { mapGetters, mapActions } from 'vuex'
+export const ebookMinxin = {
     computed: {
         ...mapGetters(["fileName", "menuVisible"]),
-        ...mapActions(['SET_FILENAME', 'SET_MENUVISIBLE'])
+    },
+    methods: {
+        ...mapActions(['setFileName', 'setMenuVisible'])
     }
 }

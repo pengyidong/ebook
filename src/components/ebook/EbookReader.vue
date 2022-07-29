@@ -14,7 +14,7 @@ export default {
     // 传入动态URL
     const baseUrl = "http://192.168.10.157:8888/epub/";
     const fileName = this.$route.params.fileName.split("|").join("/");
-    this.$store.dispatch("setFileName", fileName).then(() => {
+    this.setFileName(fileName).then(() => {
       this.initEpub(baseUrl);
     });
   },
@@ -34,13 +34,14 @@ export default {
       }
     },
     toggleTitleAndMenu() {
-      this.$store.dispatch("setMenuVisible", !this.menuVisible);
+      this.setMenuVisible(!this.menuVisible);
     },
     hideTitleAndMenu() {
-      this.$store.dispatch("setMenuVisible", false);
+      this.setMenuVisible(false);
     },
     // 初始化电子书
     initEpub(baseUrl) {
+      console.log("baseUrl =>", baseUrl);
       const url = `${baseUrl}${this.fileName}.epub`;
       this.book = new Epub(url);
       this.rendition = this.book.renderTo("read", {
