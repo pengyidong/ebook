@@ -35,9 +35,13 @@ export default {
     },
     toggleTitleAndMenu() {
       this.setMenuVisible(!this.menuVisible);
+      if (this.menuVisible) {
+        this.setSettingVisible(-1);
+      }
     },
     hideTitleAndMenu() {
       this.setMenuVisible(false);
+      this.setSettingVisible(-1);
     },
     // 初始化电子书
     initEpub(baseUrl) {
