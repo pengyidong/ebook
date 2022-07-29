@@ -6,12 +6,10 @@
 
 <script>
 import Epub from "epubjs";
-import { mapGetters } from "vuex";
+import { ebookMinxin } from "../../utils/mixin";
 global.ePub = Epub;
 export default {
-  computed: {
-    ...mapGetters(["fileName"]),
-  },
+  mixins: [ebookMinxin],
   mounted() {
     // 传入动态URL
     const baseUrl = "http://192.168.10.157:8888/epub/";
@@ -25,15 +23,22 @@ export default {
     prevPage() {
       if (this.rendition) {
         this.rendition.prev();
+        this.hideTitleAndMenu();
       }
     },
     // 下一页
     nextPage() {
       if (this.rendition) {
         this.rendition.next();
+        this.hideTitleAndMenu();
       }
     },
-    toggleTitleAndMenu() {},
+    toggleTitleAndMenu() {
+      this.$store.dispatch("setMenuVisible", !this.menuVisible);
+    },
+    hideTitleAndMenu() {
+      this.$store.dispatch("setMenuVisible", false);
+    },
     // 初始化电子书
     initEpub(baseUrl) {
       const url = `${baseUrl}${this.fileName}.epub`;
