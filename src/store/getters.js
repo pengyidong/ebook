@@ -1,5 +1,5 @@
-const test = {
-    test: state => state.test.test
+const book = {
+    fileName: state => state.book.fileName
 }
 
-export default test
+export default book
