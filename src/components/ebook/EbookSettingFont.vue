@@ -48,7 +48,10 @@ export default {
     };
   },
   methods: {
-    setFontSize(fontSize) {},
+    setFontSize(fontSize) {
+      this.setDefaultFontSize(fontSize);
+      this.currentBook.rendition.themes.fontSize(fontSize);
+    },
   },
 };
 </script>
