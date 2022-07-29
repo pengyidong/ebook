@@ -6,7 +6,17 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters(["test"]),
+  },
+  mounted() {
+    this.$store.dispatch("setTest", 10).then(() => {
+      console.log("test =>", this.test);
+    });
+  },
+};
 document.addEventListener("DOMContentLoaded", () => {
   const html = document.querySelector("html");
   let fontSize = window.innerWidth / 10;
