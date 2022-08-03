@@ -21,16 +21,19 @@
       </div>
     </transition>
     <ebook-setting-font></ebook-setting-font>
+    <ebook-setting-font-popup></ebook-setting-font-popup>
   </div>
 </template>
 
 <script>
+import EbookSettingFontPopup from "./EbookSettingFontPopup.vue";
 import EbookSettingFont from "./EbookSettingFont.vue";
 import { ebookMinxin } from "../../utils/mixin";
 export default {
   mixins: [ebookMinxin],
   components: {
     EbookSettingFont,
+    EbookSettingFontPopup,
   },
   methods: {
     showSetting(key) {
