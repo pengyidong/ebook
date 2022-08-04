@@ -33,7 +33,7 @@
           A
         </div>
       </div>
-      <div class="setting-font-family" @click.stop="showFontFamilySetting">
+      <div class="setting-font-family" @click.stop="showFontFamilyPopup">
         <div class="setting-font-family-text-wrapper">
           <span class="setting-font-family-text">{{ defaultFontFamily }}</span>
         </div>
@@ -60,8 +60,8 @@ export default {
       this.setDefaultFontSize(fontSize);
       this.currentBook.rendition.themes.fontSize(fontSize);
     },
-    showFontFamilySetting(){
-      
+    showFontFamilyPopup(){
+      this.setFontFamilyVisible(true)
     }
   },
 };
